@@ -3,9 +3,9 @@
 
   "manifest_version": 2,
   "name": "Kiliso's App",
-  "icons": { "16": "16.png",
-             "48": "48.png",
-            "128": "128.png" },
+  "icons": { "16": "assets/16.png",
+             "48": "assets/48.png",
+            "128": "assets/128.png" },
   "version": "0.2",
   "description": "Auto reverts amazon.com to my affiliate link to help my stream on https://twitch.tv/Kiliso. More to come in the future.",
   "permissions": ["https://www.amazon.com/", "https://www.twitch.tv/kiliso"],
