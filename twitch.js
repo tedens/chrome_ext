@@ -16,7 +16,7 @@ var parseMsgHTML = function (msgHTML) {
   );
 };
 
-// Bard Search
+// Chat Search
 function chatSearcher() {
     // Attach listener that acts when a new chat message appears.
     return new MutationObserver(function (mutations) {
@@ -39,15 +39,10 @@ function chatSearcher() {
     });
 }
 
-// configuration of the observer:
 var config = {attributes: false, childList: true, characterData: false};
 
 var chatFinder = chatSearcher();
 
-// The chat, particularly the element ".chat-lines", is dynamically loaded.
-// We need to wait until the page is done loading everything in order to be
-// able to grab it.
-// We hijack MutationObserver as a way to check if an added, the chat.
 var htmlBody = $("body")[0];
 var chatLoadedObserver = new MutationObserver(function (mutations, observer) {
     mutations.forEach(function (mutation) {
@@ -57,9 +52,6 @@ var chatLoadedObserver = new MutationObserver(function (mutations, observer) {
             var target = chatSelector[0];
 
             // Pass in the target node, as well as the observer options
-            // do something
-            // add second MutationObserver
-            //compakt.observe(target, config);
             chatFinder.observe(target, config);
 
             // Alert page action that we found a chat and we're going to get to work.
